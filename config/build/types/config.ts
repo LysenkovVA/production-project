@@ -7,6 +7,8 @@ export interface BuildPaths {
     build: string;
     // Путь до index.html
     html: string;
+    // Путь до папки src
+    src: string;
 }
 
 export interface BuildEnv {

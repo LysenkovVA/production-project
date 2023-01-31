@@ -12,6 +12,11 @@
     // Компилятор будет обрабатываеть не только TS, но и JS файлы
     "allowJs": true,
     "moduleResolution": "node",
+    // Для абсолютного импорта
+    "baseUrl": ".",
+    "paths": {
+      "*":["./src/*"]
+    },
     // Для использования commonJS
     "esModuleInterop": true,
     // Если какая-то библиотека не имеет default импортов, чтобы не писать import * as...

@@ -22,7 +22,7 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
             //Конфигурируем лоадеры (они предназначены для обработки файлов, которые выходят за рамки JS (css, ts, jpg и т.д.)
             rules: buildLoaders(options),
         },
-        resolve: buildResolvers(),
+        resolve: buildResolvers(options),
         // Построение Source map, чтобы отслеживать ошибки
         // Добавляем их только в режиме разработки (используем флаг isDev)
         devtool: isDev ? 'inline-source-map' : undefined,
