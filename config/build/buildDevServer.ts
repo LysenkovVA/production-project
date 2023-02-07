@@ -13,5 +13,5 @@ export function buildDevServer(options: BuildOptions): DevServerConfiguration {
         // Согласно документации можно не добавлять плагин для обновления в конфигурацию
         // webpack, этого флага достаточно
         hot: true,
-    }
+    };
 }

@@ -13,12 +13,12 @@ export function buildPlugins({paths, isDev}: BuildOptions): webpack.WebpackPlugi
         // Для отслеживания прогресса сборки
         new webpack.ProgressPlugin(),
         new MiniCssExtractPlugin({
-            filename: 'css/[name].[contenthash:8].css',
-            chunkFilename: 'css/[name].[contenthash:8].css'
+            filename: "css/[name].[contenthash:8].css",
+            chunkFilename: "css/[name].[contenthash:8].css"
         }),
         // Прокидывает в приложение глобальные переменные
         new webpack.DefinePlugin({
             __IS_DEV__: JSON.stringify(isDev),
         })
-    ]
+    ];
 }

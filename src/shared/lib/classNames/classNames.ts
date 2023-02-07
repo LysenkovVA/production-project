@@ -7,8 +7,8 @@ export function classNames(cls: string, mods: Mods = {}, additional: string[] = 
         ...additional.filter(Boolean),
         ...Object.entries(mods)
             // Оставляем элементы со значением true
-            .filter(([className, value]) => Boolean(value))
+            .filter(([_, value]) => Boolean(value))
             .map(([className]) => className)
     ]
-        .join(' ');
+        .join(" ");
 }

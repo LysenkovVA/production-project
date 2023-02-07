@@ -12,7 +12,7 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
         mode: mode,
         entry: paths.entry,
         output: {
-            filename: '[name].[contenthash].js',
+            filename: "[name].[contenthash].js",
             path: paths.build,
             // Удаление ненужного мусора из папки сборки
             clean: true
@@ -25,7 +25,7 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
         resolve: buildResolvers(options),
         // Построение Source map, чтобы отслеживать ошибки
         // Добавляем их только в режиме разработки (используем флаг isDev)
-        devtool: isDev ? 'inline-source-map' : undefined,
+        devtool: isDev ? "inline-source-map" : undefined,
         devServer: isDev? buildDevServer(options) : undefined,
     };
 }
