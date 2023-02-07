@@ -11,3 +11,13 @@
 
   min-height: 100vh;
 }
+
+.content-page {
+  display: flex;
+}
+
+.page-wrapper {
+  // Чтобы sidebar не сдвигался при растягивании контента страницы
+  flex-grow: 1;
+  padding: 20px;
+}
