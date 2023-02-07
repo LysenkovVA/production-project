@@ -16,3 +16,6 @@ declare module "*.svg" {
     const SVG: React.VFC<React.SVGProps<SVGSVGElement>>;
     export default SVG;
 }
+
+// Для плагина webpack.DefinePlugin
+declare const __IS_DEV__: boolean;
