@@ -4,20 +4,18 @@
 @import "themes/dark";
 
 .app {
-  font: var(--font-m);
-
-  background: var(--bg-color);
-  color: var(--primary-color);
-
-  min-height: 100vh;
+    font: var(--font-m);
+    background: var(--bg-color);
+    color: var(--primary-color);
+    min-height: 100vh;
 }
 
 .content-page {
-  display: flex;
+    display: flex;
 }
 
 .page-wrapper {
-  // Чтобы sidebar не сдвигался при растягивании контента страницы
-  flex-grow: 1;
-  padding: 20px;
+    // Чтобы sidebar не сдвигался при растягивании контента страницы
+    flex-grow: 1;
+    padding: 20px;
 }
