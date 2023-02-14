@@ -29,6 +29,10 @@
     }
   },
   "include": [
-    "config/jest/setupTests.ts"
+    // Подключаем тесты JEST
+    "config/jest/setupTests.ts",
+    // После этого не видит импорты scss, надо включить все файлы из папки src
+    "./src/**/*.ts",
+    "./src/**/*.tsx"
   ]
 }
