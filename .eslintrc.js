@@ -46,6 +46,6 @@ module.exports = {
             "error",
             "always"
         ],
-        "i18next/no-literal-string": ["error", {markupOnly: true}]
+        "i18next/no-literal-string": ["error", { markupOnly: true }]
     }
 };
