@@ -5,7 +5,8 @@ import {BundleAnalyzerPlugin} from "webpack-bundle-analyzer";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
 export function buildPlugins({paths, isDev}: BuildOptions): webpack.WebpackPluginInstance[] {
-    return [
+
+    const plugins = [
         // Для добавления index.html в сборку
         new HtmlWebpackPlugin({
             // Файл из определенной папки, который будет использоваться как шаблон, чтобы в него встраивались скрипты
@@ -21,9 +22,15 @@ export function buildPlugins({paths, isDev}: BuildOptions): webpack.WebpackPlugi
         new webpack.DefinePlugin({
             __IS_DEV__: JSON.stringify(isDev),
         }),
-        new BundleAnalyzerPlugin({
+    ];
+
+    if (isDev) {
+        plugins.push(new webpack.HotModuleReplacementPlugin());
+        plugins.push(new BundleAnalyzerPlugin({
             // Открывать в браузере при сборке
             openAnalyzer: false
-        }),
-    ];
+        }));
+    }
+
+    return plugins;
 }
