@@ -6,7 +6,7 @@ on:
     branches: [ main ]
 jobs:
   pipelline:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     strategy:
       matrix:
         node_version: [ 19.x ]
@@ -31,4 +31,4 @@ jobs:
       - name: building storybook
         run: npm run storybook:build
       - name: ui testing
-        run: npm run test:ui:ci
+        run: npm run test:ui:ci:macos
