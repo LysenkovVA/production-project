@@ -12,6 +12,12 @@ module.exports = {
         "plugin:i18next/recommended"
     ],
     "overrides": [
+        {
+            files: ["**/src/**/*.{test,stories}.{ts,tsx}"],
+            rules: {
+                //"i18next/no-literal-string": "off",
+            }
+        }
     ],
     "settings": {
         "react": {
@@ -26,7 +32,8 @@ module.exports = {
     "plugins": [
         "react",
         "@typescript-eslint",
-        "i18next"
+        "i18next",
+        "react-hooks",
     ],
     "rules": {
         "indent": [
@@ -46,6 +53,16 @@ module.exports = {
             "error",
             "always"
         ],
-        "i18next/no-literal-string": ["error", { markupOnly: true }]
+        "i18next/no-literal-string": [
+            "error",
+            {
+                markupOnly: true,
+                ignoreAttribute: ["data-testid", "to"],
+            },
+        ],
+        "jsx-a11y/no-static-element-interactions": "off",
+        "jsx-a11y/click-events-have-key-events": "off",
+        "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
+        "react-hooks/exhaustive-deps": "error", // Checks effect dependencies
     }
 };
