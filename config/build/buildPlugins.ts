@@ -26,6 +26,8 @@ export function buildPlugins({paths, isDev}: BuildOptions): webpack.WebpackPlugi
 
     if (isDev) {
         //plugins.push(new webpack.HotModuleReplacementPlugin());
+
+        // Вытаскиваем этот плагин для прод режима из условия для анализа бандла
         plugins.push(new BundleAnalyzerPlugin({
             // Открывать в браузере при сборке
             openAnalyzer: false
