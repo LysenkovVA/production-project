@@ -1,5 +1,9 @@
 // eslint-disable-next-line no-undef
 module.exports = {
+    "globals": {
+        __IS_DEV__: true,
+        __API__: true,
+    },
     "env": {
         "browser": true,
         "es2021": true,
@@ -66,5 +70,6 @@ module.exports = {
         "react-hooks/exhaustive-deps": "error", // Checks effect dependencies
         "react/display-name": "off",
         "@typescript-eslint/no-explicit-any": "off",
+        "no-undef": "off",
     }
 };

@@ -11,6 +11,7 @@
     "jsx": "react-jsx",
     // Компилятор будет обрабатываеть не только TS, но и JS файлы
     "allowJs": true,
+    "strict": true,
     "moduleResolution": "node",
     // Для абсолютного импорта
     "baseUrl": ".",
@@ -20,7 +21,7 @@
     // Для использования commonJS
     "esModuleInterop": true,
     // Если какая-то библиотека не имеет default импортов, чтобы не писать import * as...
-    "allowSyntheticDefaultImports": true,
+    "allowSyntheticDefaultImports": true
   },
   // Нужно для конфигурации TypeScript
   "ts-node": {
