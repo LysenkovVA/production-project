@@ -4,19 +4,21 @@ import {memo, useCallback, useEffect} from "react";
 import {DynamicModuleLoader, ReducersList} from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import {
     fetchProfileData,
-    getProfileData,
-    getProfileError, getProfileForm,
-    getProfileIsLoading, getProfileReadonly,
+    getProfileError,
+    getProfileForm,
+    getProfileIsLoading,
+    getProfileReadonly,
+    getProfileValidateErrors,
     profileActions,
     ProfileCard,
-    profileReducer
+    profileReducer, ValidateProfileError
 } from "entities/Profile";
 import {useAppDispatch} from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import {useSelector} from "react-redux";
 import {ProfilePageHeader} from "./ProfilePageHeader/ProfilePageHeader";
 import {Currency} from "entities/Currency";
 import {Country} from "entities/Country/model/types/country";
-
+import {Text, TextTheme} from "shared/ui/Text/Text";
 
 const reducers: ReducersList = {
     profile: profileReducer,
@@ -27,16 +29,27 @@ interface ProfilePageProps {
 }
 
 const ProfilePage = memo(({className}: ProfilePageProps) => {
-    const {t} = useTranslation();
+    const {t} = useTranslation("profile");
 
     const dispatch = useAppDispatch();
     const formData = useSelector(getProfileForm);
     const isLoading = useSelector(getProfileIsLoading);
     const error = useSelector(getProfileError);
     const readonly = useSelector(getProfileReadonly);
+    const validateErrors = useSelector(getProfileValidateErrors);
+
+    const validateErrorTranslates = {
+        [ValidateProfileError.INCORRECT_USER_DATA]: t("Некорректные данные пользователя"),
+        [ValidateProfileError.INCORRECT_AGE]: t("Некорректный возраст"),
+        [ValidateProfileError.INCORRECT_COUNTRY]: t("Некорректная страна"),
+        [ValidateProfileError.NO_DATA]: t("Отсутствуют данные профиля"),
+        [ValidateProfileError.SERVER_ERROR]: t("Серверная ошибка при сохранении"),
+    };
 
     useEffect(() => {
-        dispatch(fetchProfileData());
+        if (__PROJECT__ !== "storybook") {
+            dispatch(fetchProfileData());
+        }
     }, [dispatch]);
 
     const onChangeFirstname = useCallback((value?:string) => {
@@ -93,6 +106,13 @@ const ProfilePage = memo(({className}: ProfilePageProps) => {
                 className={classNames("", {}, [className])}
             >
                 <ProfilePageHeader />
+                {validateErrors?.length && validateErrors.map(err => (
+                    <Text
+                        key={err}
+                        theme={TextTheme.ERROR}
+                        text={validateErrorTranslates[err]}
+                    />
+                ))}
                 <ProfileCard
                     data={formData}
                     isLoading={isLoading}

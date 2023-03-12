@@ -3,6 +3,7 @@ module.exports = {
     "globals": {
         __IS_DEV__: true,
         __API__: true,
+        __PROJECT__: true,
     },
     "env": {
         "browser": true,
@@ -71,5 +72,7 @@ module.exports = {
         "react/display-name": "off",
         "@typescript-eslint/no-explicit-any": "off",
         "no-undef": "off",
+        "@typescript-eslint/no-non-null-assertion": "off",
+
     }
 };
