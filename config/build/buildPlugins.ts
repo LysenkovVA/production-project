@@ -3,6 +3,7 @@ import webpack from "webpack";
 import {BuildOptions} from "./types/config";
 import {BundleAnalyzerPlugin} from "webpack-bundle-analyzer";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import ReactRefreshWebpackPlugin from "@pmmmwh/react-refresh-webpack-plugin";
 
 export function buildPlugins({paths, isDev, apiUrl, project}: BuildOptions): webpack.WebpackPluginInstance[] {
 
@@ -28,7 +29,7 @@ export function buildPlugins({paths, isDev, apiUrl, project}: BuildOptions): web
 
     if (isDev) {
         //plugins.push(new webpack.HotModuleReplacementPlugin());
-
+        plugins.push(new ReactRefreshWebpackPlugin());
         // Вытаскиваем этот плагин для прод режима из условия для анализа бандла
         plugins.push(new BundleAnalyzerPlugin({
             // Открывать в браузере при сборке
