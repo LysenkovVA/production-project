@@ -14,7 +14,7 @@ const ArticlesPage = ({className}: ArticlesPageProps) => {
         <div
             className={classNames(cls.ArticlesPage, {}, [className])}
         >
-            ARTICLES PAGE
+
         </div>
     );
 };

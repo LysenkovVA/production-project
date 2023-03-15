@@ -1,40 +1,40 @@
-#name: Linting, testing and building
-#on:
-#  push:
-#    branches: [ main ]
-#  pull_request:
-#    branches: [ main ]
-#jobs:
-#  pipelline:
-#    runs-on: macos-latest
-#    strategy:
-#      matrix:
-#        node_version: [ 19.x ]
-#    steps:
-#      - uses: actions/checkout@v2
-#      - name: Use Node.js ${{ matrix.node-version }}
-#        uses: actions/setup-node@v1
-#        with:
-#          node-version:
-#            ${{ matrix.node-version }}
-#      - run: npm ci
-#      - name: install modules
-#        run: npm install
-#      - name: build production project
-#        run: npm run build:prod
-#        if: always()
-#      - name: linting typescript
-#        run: npm run lint:ts
-#        if: always()
-#      - name: linting scss
-#        run: npm run lint:scss
-#        if: always()
-#      - name: unit testing
-#        if: always()
-#        run: npm run test:unit
-#      - name: building storybook
-#        run: npm run storybook:build
-#        if: always()
+name: Linting, testing and building
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+jobs:
+  pipelline:
+    runs-on: macos-latest
+    strategy:
+      matrix:
+        node_version: [ 19.x ]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version:
+            ${{ matrix.node-version }}
+      - run: npm ci
+      - name: install modules
+        run: npm install
+      - name: build production project
+        run: npm run build:prod
+        if: always()
+      - name: linting typescript
+        run: npm run lint:ts
+        if: always()
+      - name: linting scss
+        run: npm run lint:scss
+        if: always()
+      - name: unit testing
+        if: always()
+        run: npm run test:unit
+      - name: building storybook
+        run: npm run storybook:build
+        if: always()
 #      - name: ui testing
 #        run: npm run test:ui:ci:macos
 #        if: always()
