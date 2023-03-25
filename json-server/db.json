@@ -102,6 +102,24 @@
       "text": "some comment 3",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "new",
+      "id": "F5dpvSb"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "new",
+      "id": "DQqAUiR"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "hello",
+      "id": "W4iWAwX"
     }
   ],
   "users": [
@@ -110,7 +128,7 @@
       "username": "admin",
       "password": "123",
       "role": "ADMIN",
-      "avatar": "https://overclockers.ru/st/legacy/blog/151718/294019_O.jpg"
+      "avatar": "https://teknotower.com/wp-content/uploads/2020/11/js.png"
     },
     {
       "id": "2",
@@ -120,14 +138,28 @@
       "avatar": "https://overclockers.ru/st/legacy/blog/151718/294019_O.jpg"
     }
   ],
-  "profile": {
-    "first": "jgh",
-    "lastname": "asf",
-    "age": 465,
-    "currency": "RUB",
-    "country": "Belarus",
-    "city": "Moscow",
-    "username": "admin213",
-    "avatar": "https://overclockers.ru/st/legacy/blog/151718/294019_O.jpg"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "first": "Vanya",
+      "lastname": "Ivanov",
+      "age": 465,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Moscow",
+      "username": "FirstUser",
+      "avatar": "https://teknotower.com/wp-content/uploads/2020/11/js.png"
+    },
+    {
+      "id": "2",
+      "first": "Petya1",
+      "lastname": "Smirnov",
+      "age": 465,
+      "currency": "RUB",
+      "country": "Belarus",
+      "city": "Grodno",
+      "username": "SecondUser",
+      "avatar": "https://overclockers.ru/st/legacy/blog/151718/294019_O.jpg"
+    }
+  ]
 }

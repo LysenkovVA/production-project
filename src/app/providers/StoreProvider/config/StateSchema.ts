@@ -8,6 +8,7 @@ import {To} from "@remix-run/router";
 import {NavigateOptions} from "react-router/dist/lib/context";
 import {ArticleDetailsSchema} from "entities/Article";
 import {ArticleDetailsCommentsSchema} from "pages/ArticleDetailsPage";
+import {AddCommentFormSchema} from "features/addCommentForm";
 
 // Наша схема
 export interface StateSchema {
@@ -19,6 +20,7 @@ export interface StateSchema {
     profile?: ProfileSchema;
     articleDetails?: ArticleDetailsSchema;
     articleDetailsComments?: ArticleDetailsCommentsSchema;
+    addCommentForm?: AddCommentFormSchema;
 }
 
 // Удобства тайпскрипта для reduceManager
