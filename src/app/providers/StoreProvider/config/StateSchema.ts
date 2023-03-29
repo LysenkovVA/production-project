@@ -7,7 +7,7 @@ import {AxiosInstance} from "axios";
 import {To} from "@remix-run/router";
 import {NavigateOptions} from "react-router/dist/lib/context";
 import {ArticleDetailsSchema} from "entities/Article";
-import {ArticleDetailsCommentsSchema} from "pages/ArticleDetailsPage";
+import {ArticleDetailsCommentsSchema, ArticlesPageSchema} from "pages/ArticleDetailsPage";
 import {AddCommentFormSchema} from "features/addCommentForm";
 
 // Наша схема
@@ -21,6 +21,7 @@ export interface StateSchema {
     articleDetails?: ArticleDetailsSchema;
     articleDetailsComments?: ArticleDetailsCommentsSchema;
     addCommentForm?: AddCommentFormSchema;
+    articlesPage?: ArticlesPageSchema;
 }
 
 // Удобства тайпскрипта для reduceManager
