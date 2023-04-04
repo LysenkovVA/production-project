@@ -17,6 +17,7 @@ import {AddCommentForm} from "features/addCommentForm";
 import {addCommentForArticle} from "../../model/services/addCommentForArticle/addCommentForArticle";
 import {Button, ButtonTheme} from "shared/ui/Button/Button";
 import {RoutePath} from "shared/config/routeConfig/routeConfig";
+import {Page} from "shared/ui/Page/Page";
 
 interface ArticleDetailsPageProps {
     className?: string;
@@ -52,17 +53,17 @@ const ArticleDetailsPage = ({className}: ArticleDetailsPageProps) => {
 
     if (!id) {
         return (
-            <div
+            <Page
                 className={classNames(cls.ArticleDetailsPage, {}, [className])}
             >
                 {t("Статья не найдена")}
-            </div>
+            </Page>
         );
     }
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount={true}>
-            <div
+            <Page
                 className={classNames("", {}, [className])}
             >
                 <Button
@@ -81,7 +82,7 @@ const ArticleDetailsPage = ({className}: ArticleDetailsPageProps) => {
                     isLoading={commentsIsLoading}
                     comments={comments}
                 />
-            </div>
+            </Page>
         </DynamicModuleLoader>
     );
 };
