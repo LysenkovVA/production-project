@@ -20,7 +20,7 @@ module.exports = {
         {
             files: ["**/src/**/*.{test,stories}.{ts,tsx}"],
             rules: {
-                //"i18next/no-literal-string": "off",
+                "i18next/no-literal-string": "off",
             }
         }
     ],
@@ -62,7 +62,7 @@ module.exports = {
             "error",
             {
                 markupOnly: true,
-                ignoreAttribute: ["data-testid", "to", "name"],
+                ignoreAttribute: ["data-testid", "to", "name", "target"],
             },
         ],
         "jsx-a11y/no-static-element-interactions": "off",
