@@ -9,6 +9,8 @@ export interface BuildPaths {
     html: string;
     // Путь до папки src
     src: string;
+    locales: string;
+    buildLocales: string;
 }
 
 export interface BuildEnv {
