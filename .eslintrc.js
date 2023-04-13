@@ -39,6 +39,7 @@ module.exports = {
         "@typescript-eslint",
         "i18next",
         "react-hooks",
+        "raudbrand-plugin",
     ],
     "rules": {
         "indent": [
@@ -73,5 +74,6 @@ module.exports = {
         "@typescript-eslint/no-explicit-any": "off",
         "no-undef": "off",
         "@typescript-eslint/no-non-null-assertion": "off",
+        "raudbrand-plugin/path-checker": "error",
     }
 };
