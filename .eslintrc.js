@@ -73,6 +73,8 @@ module.exports = {
                     "direction",
                     "gap",
                     "role",
+                    "as",
+                    "defaultValue"
                 ],
             },
         ],
@@ -85,5 +87,6 @@ module.exports = {
         "no-undef": "off",
         "@typescript-eslint/no-non-null-assertion": "off",
         "raudbrand-plugin/path-checker": "error",
+        "@typescript-eslint/no-empty-function": "off",
     }
 };
