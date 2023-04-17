@@ -88,5 +88,6 @@ module.exports = {
         "@typescript-eslint/no-non-null-assertion": "off",
         "raudbrand-plugin/path-checker": "error",
         "@typescript-eslint/no-empty-function": "off",
+        "@typescript-eslint/no-var-requires": "off",
     }
 };
