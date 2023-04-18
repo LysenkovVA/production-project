@@ -6,6 +6,8 @@ export {
     getUserInited
 } from "./model/selectors/getUserInited/getUserInited";
 
+export {isUserAdmin, isUserManager, getUserRoles} from "./model/selectors/roleSelector";
+
 export {
     userReducer,
     userActions
@@ -13,6 +15,7 @@ export {
 
 export {
     UserSchema,
-    User
+    User,
+    UserRole
 } from "./model/types/user";
 
