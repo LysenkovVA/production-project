@@ -21,7 +21,8 @@
     // Для использования commonJS
     "esModuleInterop": true,
     // Если какая-то библиотека не имеет default импортов, чтобы не писать import * as...
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "isolatedModules": true,
   },
   // Нужно для конфигурации TypeScript
   "ts-node": {
@@ -35,5 +36,5 @@
     // После этого не видит импорты scss, надо включить все файлы из папки src
     "./src/**/*.ts",
     "./src/**/*.tsx"
-  ]
+  ],
 }
