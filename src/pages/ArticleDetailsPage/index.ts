@@ -2,7 +2,6 @@ export {ArticleDetailsPageAsync as ArticleDetailsPage} from "./ui/ArticleDetails
 export type {ArticleDetailsCommentsSchema} from "./model/types/ArticleDetailsCommentsSchema";
 export type {ArticleDetailsPageRecommendationsSchema} from "./model/types/ArticleDetailsPageRecommendationsSchema";
 export type {ArticleDetailsPageSchema} from "./model/types";
-export {ArticleDetailsPageHeader} from "./ui/ArticleDetailsPageHeader/ArticleDetailsPageHeader";
 
 
 
