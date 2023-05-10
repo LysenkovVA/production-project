@@ -15,6 +15,7 @@
   "Форма авторизации": "Auth form",
   "Неверный логин или пароль": "Incorrect login or password",
   "Выйти": "Logout",
+  "Войти": "Login",
   "Отменить": "Cancel",
   "Сохранить": "Save",
   "Укажите валюту": "Currency",
@@ -33,5 +34,7 @@
   "Редактирование статьи с ID=": "Edit article with ID=",
   "Создание новой статьи": "Create new article",
   "Профиль": "Profile",
-  "Ошибка при загрузке статей": "Error loading articles"
+  "Ошибка при загрузке статей": "Error loading articles",
+  "Ваш отзыв": "Your feedback",
+  "Закрыть": "Close"
 }
