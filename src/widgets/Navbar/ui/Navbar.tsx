@@ -12,8 +12,6 @@ import {NotificationButton} from "@/features/notificationButton";
 import {AvatarDropdown} from "@/features/avatarDropdown";
 import {useSelector} from "react-redux";
 import {getUserAuthData} from "@/entities/User";
-import {Drawer} from "@/shared/ui/Drawer/Drawer";
-import { NotificationList } from "@/entities/Notification";
 
 interface NavbarProps {
     className?: string;
@@ -37,7 +35,7 @@ export const Navbar = memo(({className}: NavbarProps) => {
             <header className={classNames(cls.Navbar, {}, [className])}>
                 <Text
                     className={cls.appName}
-                    title={t("Viktor's App")}
+                    title={t("Viktor's App") as string}
                     theme={TextTheme.INVERTED}
                 />
                 <AppLink
