@@ -87,7 +87,8 @@ module.exports = {
         "@typescript-eslint/no-explicit-any": "off",
         "no-undef": "off",
         "@typescript-eslint/no-non-null-assertion": "off",
-        "raudbrand-plugin/path-checker": "error",
+        // Мой плагин
+        "raudbrand-plugin/path-checker": ["error", {alias: "@"}],
         "@typescript-eslint/no-empty-function": "off",
         "@typescript-eslint/no-var-requires": "off",
     }

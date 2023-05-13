@@ -25,7 +25,7 @@ export const DrawerContent = memo((props: DrawerProps) => {
         children,
         onClose,
         isOpen,
-        lazy,
+        // lazy,
     } = props;
 
     const openDrawer = useCallback(() => {
