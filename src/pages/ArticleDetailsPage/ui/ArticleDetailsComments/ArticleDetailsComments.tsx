@@ -48,7 +48,7 @@ export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) 
             <Text
                 size={TextSize.L}
                 //className={cls.commentTitle}
-                title={t("Комментарии")}
+                title={t("Комментарии") as string}
             />
             <Suspense fallback={<Loader />}>
                 <AddCommentForm onSendComment={onSendComment}/>

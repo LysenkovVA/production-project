@@ -44,7 +44,7 @@ export const CommentList = memo((props: CommentListProps) => {
                         comment={comment}
                     />
                 ))
-                : <Text text={t("Комментарии отсутствуют")}/>
+                : <Text text={t("Комментарии отсутствуют") as string}/>
             }
         </VStack>
     );

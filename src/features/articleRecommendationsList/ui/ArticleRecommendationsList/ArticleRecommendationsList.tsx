@@ -26,7 +26,7 @@ export const ArticleRecommendationsList = memo((props: ArticleRecommendationsLis
         >
             <Text
                 size={TextSize.L}
-                title={t("Рекомендуем")}
+                title={t("Рекомендуем") as string}
             />
             <ArticleList
                 articles={articles}
