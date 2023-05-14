@@ -1,3 +1,4 @@
+// eslint-disable-next-line raudbrand-plugin/layer-imports
 import "@/app/styles/index.scss";
 import {Story} from "@storybook/react";
 

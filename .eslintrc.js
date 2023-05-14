@@ -89,11 +89,18 @@ module.exports = {
         "@typescript-eslint/no-non-null-assertion": "off",
         // Мой плагин
         "raudbrand-plugin/path-checker": ["error", {alias: "@"}],
+        "raudbrand-plugin/layer-imports": [
+            "error",
+            {
+                alias: "@",
+                ignoreImportPatterns: ["**/StoreProvider", "**/testing"],
+            }
+        ],
         "raudbrand-plugin/public-api-imports": [
             "error",
             {
                 alias: "@",
-                testFilesPatterns: ["**/*.test.*", "**/*.story.*", "**/StoreDecorator.tsx"]
+                testFilesPatterns: ["**/*.test.*", "**/*.story.*", "**/StoreDecorator.tsx"],
             }
         ],
         "@typescript-eslint/no-empty-function": "off",
