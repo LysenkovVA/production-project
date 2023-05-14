@@ -40,6 +40,7 @@ module.exports = {
         "i18next",
         "react-hooks",
         "raudbrand-plugin",
+        "unused-imports",
     ],
     "rules": {
         "indent": [
@@ -105,5 +106,6 @@ module.exports = {
         ],
         "@typescript-eslint/no-empty-function": "off",
         "@typescript-eslint/no-var-requires": "off",
+        "unused-imports/no-unused-imports": "error",
     }
 };
