@@ -41,7 +41,9 @@ export default {
     moduleNameMapper: {
         "\\.s?css$": "identity-obj-proxy",
         // Mock для всех импортов в которых присутствует svg
-        "\\.svg": path.resolve(__dirname, "jestEmptyComponent.tsx")
+        "\\.svg": path.resolve(__dirname, "jestEmptyComponent.tsx"),
+        // Поддержка aliases
+        "^@/(.*)$": "<rootDir>/src/$1"
     },
     // The glob patterns Jest uses to detect test files
     testMatch: [
