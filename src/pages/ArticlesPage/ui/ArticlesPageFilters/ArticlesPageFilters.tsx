@@ -18,14 +18,14 @@ import {
 } from "../../model/selectors/articlesPageSelectors";
 import {Card} from "@/shared/ui/Card";
 import {Input} from "@/shared/ui/Input";
-import {SortOrder} from "@/shared/types";
+
 import {fetchArticlesList} from "../../model/services/fetchArticlesList/fetchArticlesList";
 import {useDebounce} from "@/shared/lib/hooks/useDebounce/useDebounce";
 import {ArticleType} from "@/entities/Article";
 import {ArticleSortSelector} from "@/features/ArticleSortSelector";
 import {ArticleViewSelector} from "@/features/ArticleViewSelector";
 import {ArticleTypeTabs} from "@/features/ArticleTypeTabs";
-
+import {SortOrder} from "@/shared/types/sort";
 
 interface ArticlesPageFiltersProps {
     className?: string;

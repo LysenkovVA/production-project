@@ -18,6 +18,7 @@ const ArticleEditPage = (props: ArticleEditPageProps) => {
     return (
         <Page
             className={classNames(cls.ArticleEditPage, {}, [className])}
+            data-testid={"ArticleEditPage"}
         >
             {isEdit ? t(`Редактирование статьи с ID=${id}`) : t("Создание новой статьи")}
         </Page>
