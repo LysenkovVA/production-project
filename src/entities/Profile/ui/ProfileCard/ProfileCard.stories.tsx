@@ -26,7 +26,7 @@ export const Primary =  {
     }
 };
 
-export const withError = {
+export const WithError = {
     args: {
         error: "error"
     }

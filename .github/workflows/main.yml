@@ -53,7 +53,7 @@ concurrency:
   cancel-in-progress: true
 jobs:
   build-and-ui-testing:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     concurrency: ci-${{ github.ref }}
     environment:
       name: github-pages
@@ -76,7 +76,7 @@ jobs:
         run: npm run storybook:build
         if: always()
       - name: screenshot testing
-        run: npm run test:ui:ci:macos
+        run: npm run test:ui:ci
         if: always()
       - name: unit testing
         if: always()
@@ -101,7 +101,7 @@ jobs:
         uses: actions/deploy-pages@v1
 
   checks:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [ 19.x ]
@@ -118,4 +118,3 @@ jobs:
         if: always()
       - name: linting css
         run: npm run lint:scss
-

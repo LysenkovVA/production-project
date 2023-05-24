@@ -88,7 +88,7 @@ const article = {
     ],
 } as Article;
 
-export const isLoadingBig = {
+export const IsLoadingBig = {
     args: {
         isLoading: true,
         articles: [],
@@ -96,7 +96,7 @@ export const isLoadingBig = {
     }
 };
 
-export const isLoadingSmall = {
+export const IsLoadingSmall = {
     args: {
         isLoading: true,
         articles: [],
