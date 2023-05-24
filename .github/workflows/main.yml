@@ -5,7 +5,7 @@
 #  pull_request:
 #    branches: [ main ]
 #jobs:
-#  pipelline:
+#  pipeline:
 #    runs-on: macos-latest
 #    strategy:
 #      matrix:
