@@ -1,7 +1,5 @@
-import React from "react";
-import {ComponentStory, ComponentMeta} from "@storybook/react";
-
 import {CommentCard} from "./CommentCard";
+import {RouterDecorator} from "@/shared/config/storybook/RouterDecorator/RouterDecorator";
 
 export default {
     title: "entities/Comment/CommentCard",
@@ -9,31 +7,32 @@ export default {
     argTypes: {
         backgroundColor: {control: "color"},
     },
-} as ComponentMeta<typeof CommentCard>;
-
-const Template: ComponentStory<typeof CommentCard> = (args) => <CommentCard {...args} />;
-
-export const Normal = Template.bind({});
-Normal.args = {
-    comment: {
-        id: "1",
-        text: "hello world",
-        user: {
-            id: "1",
-            username: "Vasya"
-        }
-    },
+    decorators: [RouterDecorator]
 };
 
-export const IsLoading = Template.bind({});
-IsLoading.args = {
-    comment: {
-        id: "1",
-        text: "hello world",
-        user: {
+export const Normal = {
+    args: {
+        comment: {
             id: "1",
-            username: "Vasya"
-        }
-    },
-    isLoading: true
+            text: "hello world",
+            user: {
+                id: "1",
+                username: "Vasya"
+            }
+        },
+    }
+};
+
+export const IsLoading = {
+    args: {
+        comment: {
+            id: "1",
+            text: "hello world",
+            user: {
+                id: "1",
+                username: "Vasya"
+            }
+        },
+        isLoading: true
+    }
 };

@@ -10,7 +10,13 @@ module.exports = {
         "es2021": true,
         "jest": true
     },
-    "extends": ["eslint:recommended", "plugin:react/recommended", "plugin:@typescript-eslint/recommended", "plugin:i18next/recommended", "plugin:storybook/recommended"],
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:i18next/recommended",
+        "plugin:storybook/recommended"
+    ],
     "overrides": [{
         files: ["**/src/**/*.{test,stories}.{ts,tsx}"],
         rules: {
@@ -27,7 +33,14 @@ module.exports = {
         "ecmaVersion": "latest",
         "sourceType": "module"
     },
-    "plugins": ["react", "@typescript-eslint", "i18next", "react-hooks", "raudbrand-plugin", "unused-imports"],
+    "plugins": [
+        "react",
+        "@typescript-eslint",
+        "i18next",
+        "react-hooks",
+        "raudbrand-plugin",
+        "unused-imports"
+    ],
     "rules": {
         "indent": ["error", 4],
         "react/react-in-jsx-scope": "off",

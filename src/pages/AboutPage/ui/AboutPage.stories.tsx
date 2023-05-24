@@ -1,9 +1,8 @@
-import React from "react";
-import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import AboutPage from "./AboutPage";
 import {StoreDecorator} from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
 import { Theme } from "@/shared/const/theme";
+import {RouterDecorator} from "@/shared/config/storybook/RouterDecorator/RouterDecorator";
 
 export default {
     title: "pages/AboutPage",
@@ -11,18 +10,25 @@ export default {
     argTypes: {
         backgroundColor: { control: "color" },
     },
-} as ComponentMeta<typeof AboutPage>;
+    decorators: [
+        RouterDecorator,
+        StoreDecorator({
 
-const Template: ComponentStory<typeof AboutPage> = () => <AboutPage />;
+        })
+    ]
+};
 
-export const Normal = Template.bind({});
-Normal.args = {};
-Normal.decorators = [StoreDecorator({
+export const Normal = {
+    args: {
 
-})];
+    }
+};
 
-export const Dark = Template.bind({});
-Dark.args = {};
-Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
+export const Dark = {
+    args: {
 
-})];
+    },
+    decorators: [
+        ThemeDecorator(Theme.DARK)
+    ]
+};

@@ -1,7 +1,5 @@
-import React from "react";
-import {ComponentStory, ComponentMeta} from "@storybook/react";
-
 import {NotificationButton} from "./NotificationButton";
+import {StoreDecorator} from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
 
 export default {
     title: "features/NotificationButton/NotificationButton",
@@ -9,9 +7,11 @@ export default {
     argTypes: {
         backgroundColor: {control: "color"},
     },
-} as ComponentMeta<typeof NotificationButton>;
+    decorators: [StoreDecorator({})]
+};
 
-const Template: ComponentStory<typeof NotificationButton> = (args) => <NotificationButton {...args} />;
+export const Normal = {
+    args: {
 
-export const Normal = Template.bind({});
-Normal.args = {};
+    }
+};

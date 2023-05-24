@@ -1,10 +1,8 @@
-import React from "react";
-import {ComponentStory, ComponentMeta} from "@storybook/react";
-
 import {ThemeDecorator} from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { NotFoundPage } from "./NotFoundPage";
 import {StoreDecorator} from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
 import {Theme} from "@/shared/const/theme";
+import {RouterDecorator} from "@/shared/config/storybook/RouterDecorator/RouterDecorator";
 
 export default {
     title: "pages/NotFoundPage",
@@ -12,20 +10,21 @@ export default {
     argTypes: {
         backgroundColor: { control: "color" },
     },
-} as ComponentMeta<typeof NotFoundPage>;
+    decorators: [
+        RouterDecorator,
+        StoreDecorator({
 
-const Template: ComponentStory<typeof NotFoundPage> = (args) => <NotFoundPage {...args} />;
-
-export const Normal = Template.bind({});
-Normal.args = {
+        })]
 };
-Normal.decorators = [StoreDecorator({
 
-})];
+export const Normal = {
+    args: {
 
-export const Dark = Template.bind({});
-Dark.args = {
+    }
 };
-Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
+export const Dark = {
+    args: {
 
-})];
+    },
+    decorators: [ThemeDecorator(Theme.DARK)]
+};

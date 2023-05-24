@@ -1,9 +1,7 @@
-// eslint-disable-next-line raudbrand-plugin/layer-imports
-import "@/app/styles/index.scss";
-import {Story} from "@storybook/react";
+import {StoryFn} from "@storybook/react";
 import {BrowserRouter} from "react-router-dom";
 
-export const RouterDecorator = (StoryComponent: Story) => {
+export const RouterDecorator = (StoryComponent: StoryFn) => {
     return(
         <BrowserRouter>
             <StoryComponent />

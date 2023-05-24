@@ -1,10 +1,9 @@
-import {Story} from "@storybook/react";
+import {StoryFn} from "@storybook/react";
 import {Theme} from "@/shared/const/theme";
 // eslint-disable-next-line raudbrand-plugin/layer-imports
 import { ThemeProvider } from "@/app/providers/ThemeProvider";
 
-// eslint-disable-next-line react/display-name
-export const ThemeDecorator = (theme: Theme) => (StoryComponent: Story) => (
+export const ThemeDecorator = (theme: Theme) => (StoryComponent: StoryFn) => (
     <ThemeProvider initialTheme={theme}>
         <div className={`app ${theme}`}>
             <StoryComponent />

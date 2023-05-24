@@ -1,9 +1,7 @@
-import React from "react";
-import {ComponentMeta, ComponentStory} from "@storybook/react";
-
 import {ArticleList} from "./ArticleList";
 import {Article} from "../../model/types/article";
 import {ArticleView} from "../../model/consts/consts";
+import {RouterDecorator} from "@/shared/config/storybook/RouterDecorator/RouterDecorator";
 
 export default {
     title: "entities/Article/ArticleList",
@@ -11,11 +9,9 @@ export default {
     argTypes: {
         backgroundColor: {control: "color"},
     },
-} as ComponentMeta<typeof ArticleList>;
+};
 
-const Template: ComponentStory<typeof ArticleList> = (args) => <ArticleList {...args} />;
-
-const article =  {
+const article = {
     "id": "1",
     "title": "Javascript news",
     "subtitle": "Что нового в JS за 2022 год?",
@@ -92,38 +88,44 @@ const article =  {
     ]
 } as Article;
 
-export const isLoadingBig = Template.bind({});
-isLoadingBig.args = {
-    isLoading: true,
-    articles: [],
-    view: ArticleView.BIG
+export const isLoadingBig = {
+    args: {
+        isLoading: true,
+        articles: [],
+        view: ArticleView.BIG
+    }
 };
 
-export const isLoadingSmall = Template.bind({});
-isLoadingSmall.args = {
-    isLoading: true,
-    articles: [],
-    view: ArticleView.SMALL
+export const isLoadingSmall = {
+    args: {
+        isLoading: true,
+        articles: [],
+        view: ArticleView.SMALL
+    }
 };
 
-export const ListSmall = Template.bind({});
-ListSmall.args = {
-    articles: new Array(9)
-        .fill(0)
-        .map((item, index) => ({
-            ...article,
-            id: String(index),
-        })),
-    view: ArticleView.SMALL
+export const ListSmall = {
+    args: {
+        articles: new Array(9)
+            .fill(0)
+            .map((item, index) => ({
+                ...article,
+                id: String(index),
+            })),
+        view: ArticleView.SMALL
+    },
+    decorators: [RouterDecorator]
 };
 
-export const ListBig = Template.bind({});
-ListBig.args = {
-    articles: new Array(5)
-        .fill(0)
-        .map((item, index) => ({
-            ...article,
-            id: String(index),
-        })),
-    view: ArticleView.BIG
+export const ListBig = {
+    args: {
+        articles: new Array(5)
+            .fill(0)
+            .map((item, index) => ({
+                ...article,
+                id: String(index),
+            })),
+        view: ArticleView.BIG
+    },
+    decorators: [RouterDecorator]
 };

@@ -1,20 +1,9 @@
-import React from "react";
-import {ComponentStory, ComponentMeta} from "@storybook/react";
-
 import ArticleDetailsPage from "./ArticleDetailsPage";
 import {Article, ArticleType} from "@/entities/Article";
 import {StoreDecorator} from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
 import {ArticleBlockType} from "@/entities/Article";
-
-export default {
-    title: "pages/ArticleDetailsPage/ArticleDetailsPage",
-    component: ArticleDetailsPage,
-    argTypes: {
-        backgroundColor: {control: "color"},
-    },
-} as ComponentMeta<typeof ArticleDetailsPage>;
-
-const Template: ComponentStory<typeof ArticleDetailsPage> = (args) => <ArticleDetailsPage {...args} />;
+import {RouterDecorator} from "@/shared/config/storybook/RouterDecorator/RouterDecorator";
+import {SuspenseDecorator} from "@/shared/config/storybook/SuspenseDecorator/SuspenseDecorator";
 
 const article: Article = {
     id: "1",
@@ -56,10 +45,26 @@ const article: Article = {
     ],
 };
 
-export const Normal = Template.bind({});
-Normal.args = {};
-Normal.decorators = [StoreDecorator({
-    articleDetails: {
-        data: article,
+export default {
+    title: "pages/ArticleDetailsPage/ArticleDetailsPage",
+    component: ArticleDetailsPage,
+    argTypes: {
+        backgroundColor: {control: "color"},
     },
-})];
+    decorators: [
+        RouterDecorator,
+        SuspenseDecorator,
+        StoreDecorator({
+            articleDetails: {
+                isLoading: false,
+                data: article,
+            },
+        })
+    ]
+};
+
+export const Normal = {
+    args: {
+
+    }
+};

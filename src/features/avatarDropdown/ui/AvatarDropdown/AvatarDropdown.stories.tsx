@@ -1,7 +1,6 @@
-import React from "react";
-import {ComponentStory, ComponentMeta} from "@storybook/react";
-
 import {AvatarDropdown} from "./AvatarDropdown";
+import {StoreDecorator} from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
+import {RouterDecorator} from "@/shared/config/storybook/RouterDecorator/RouterDecorator";
 
 export default {
     title: "features/AvatarDropdown/AvatarDropdown",
@@ -9,9 +8,22 @@ export default {
     argTypes: {
         backgroundColor: {control: "color"},
     },
-} as ComponentMeta<typeof AvatarDropdown>;
+    decorators: [
+        RouterDecorator,
+        StoreDecorator({
+            user: {
+                authData: {
+                    id: "1",
+                    avatar: "",
+                    username: "Viktor"
+                }
+            }
+        })
+    ]
+};
 
-const Template: ComponentStory<typeof AvatarDropdown> = (args) => <AvatarDropdown {...args} />;
+export const Normal = {
+    args: {
 
-export const Normal = Template.bind({});
-Normal.args = {};
+    }
+};

@@ -1,10 +1,7 @@
-import React from "react";
-import {ComponentMeta, ComponentStory} from "@storybook/react";
-
 import {ArticleListItem} from "./ArticleListItem";
 import {Article} from "../../model/types/article";
 import {ArticleView} from "../../model/consts/consts";
-
+import {RouterDecorator} from "@/shared/config/storybook/RouterDecorator/RouterDecorator";
 
 export default {
     title: "entities/Article/ArticleListItem",
@@ -12,11 +9,10 @@ export default {
     argTypes: {
         backgroundColor: {control: "color"},
     },
-} as ComponentMeta<typeof ArticleListItem>;
+    decorators: [RouterDecorator]
+};
 
-const Template: ComponentStory<typeof ArticleListItem> = (args) => <ArticleListItem {...args} />;
-
-const article =  {
+const article = {
     "id": "1",
     "title": "Javascript news",
     "subtitle": "Что нового в JS за 2022 год?",
@@ -93,14 +89,16 @@ const article =  {
     ]
 } as Article;
 
-export const Big = Template.bind({});
-Big.args = {
-    view: ArticleView.BIG,
-    article,
+export const Big = {
+    args: {
+        view: ArticleView.BIG,
+        article,
+    }
 };
 
-export const Small = Template.bind({});
-Small.args = {
-    view: ArticleView.SMALL,
-    article,
+export const Small = {
+    args: {
+        view: ArticleView.SMALL,
+        article,
+    }
 };
