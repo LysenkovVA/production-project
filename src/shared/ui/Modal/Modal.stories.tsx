@@ -14,7 +14,8 @@ export const Primary = {
     args: {
         isOpen: true,
         children: "Modal dialog text"
-    }
+    },
+    decorators: [ThemeDecorator(Theme.LIGHT)]
 };
 
 export const Dark = {
