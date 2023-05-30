@@ -1,7 +1,7 @@
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import webpack from "webpack";
 import {BuildOptions} from "./types/config";
-import {BundleAnalyzerPlugin} from "webpack-bundle-analyzer";
+//import {BundleAnalyzerPlugin} from "webpack-bundle-analyzer";
 import ReactRefreshWebpackPlugin from "@pmmmwh/react-refresh-webpack-plugin";
 import CircularDependencyPlugin from "circular-dependency-plugin";
 import CopyPlugin from "copy-webpack-plugin";
@@ -43,10 +43,10 @@ export function buildPlugins({paths, isDev, apiUrl, project}: BuildOptions): web
         //plugins.push(new webpack.HotModuleReplacementPlugin());
         plugins.push(new ReactRefreshWebpackPlugin());
         // Вытаскиваем этот плагин для прод режима из условия для анализа бандла
-        plugins.push(new BundleAnalyzerPlugin({
-            // Открывать в браузере при сборке
-            openAnalyzer: false
-        }));
+        // plugins.push(new BundleAnalyzerPlugin({
+        //     // Открывать в браузере при сборке
+        //     openAnalyzer: false
+        // }));
     }
 
     if (isProd) {
