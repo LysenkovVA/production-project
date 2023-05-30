@@ -1,4 +1,4 @@
-import {MutableRefObject, useEffect} from "react";
+import { MutableRefObject, useEffect } from "react";
 
 export interface UseInfiniteScrollOptions {
     // Вызывается когда пересекли элемент
@@ -7,7 +7,11 @@ export interface UseInfiniteScrollOptions {
     wrapperRef: MutableRefObject<HTMLElement>;
 }
 
-export function useInfiniteScroll({callback, triggerRef, wrapperRef}: UseInfiniteScrollOptions) {
+export function useInfiniteScroll({
+    callback,
+    triggerRef,
+    wrapperRef,
+}: UseInfiniteScrollOptions) {
     useEffect(() => {
         const wrapperElement = wrapperRef.current;
         const triggerElement = triggerRef.current;
@@ -18,7 +22,7 @@ export function useInfiniteScroll({callback, triggerRef, wrapperRef}: UseInfinit
             const options = {
                 root: wrapperElement,
                 rootMargin: "0px",
-                threshold: 1.0
+                threshold: 1.0,
             };
 
             observer = new IntersectionObserver(([entry]) => {
@@ -29,8 +33,6 @@ export function useInfiniteScroll({callback, triggerRef, wrapperRef}: UseInfinit
 
             // за чем следим
             observer.observe(triggerElement);
-
-
         }
         return () => {
             if (observer && triggerElement) {

@@ -1,7 +1,7 @@
-import {ThemeContext} from "../../context/ThemeContext";
-import {useContext} from "react";
-import {Theme} from "../../../const/theme";
-import {LOCAL_STORAGE_THEME_KEY} from "../../../const/localstorage";
+import { ThemeContext } from "../../context/ThemeContext";
+import { useContext } from "react";
+import { Theme } from "../../../const/theme";
+import { LOCAL_STORAGE_THEME_KEY } from "../../../const/localstorage";
 
 interface UseThemeResult {
     toggleTheme: () => void;
@@ -9,24 +9,24 @@ interface UseThemeResult {
 }
 
 export function useTheme(): UseThemeResult {
-    const {theme, setTheme} = useContext(ThemeContext);
+    const { theme, setTheme } = useContext(ThemeContext);
 
     const toggleTheme = () => {
         let newTheme: Theme;
         switch (theme) {
-        case Theme.DARK:
-            newTheme = Theme.LIGHT;
-            break;
-        case Theme.LIGHT:
-            newTheme = Theme.ORANGE;
-            break;
-        case Theme.ORANGE:
-            newTheme = Theme.DARK;
-            break;
-        default:
-            newTheme = Theme.LIGHT;
+            case Theme.DARK:
+                newTheme = Theme.LIGHT;
+                break;
+            case Theme.LIGHT:
+                newTheme = Theme.ORANGE;
+                break;
+            case Theme.ORANGE:
+                newTheme = Theme.DARK;
+                break;
+            default:
+                newTheme = Theme.LIGHT;
         }
-        
+
         setTheme?.(newTheme);
         // Если повесить тему на body не будет возни с порталами и переопределениями стилей
         document.body.className = newTheme;
@@ -35,6 +35,6 @@ export function useTheme(): UseThemeResult {
 
     return {
         theme: theme || Theme.LIGHT,
-        toggleTheme
+        toggleTheme,
     };
 }

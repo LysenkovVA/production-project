@@ -1,7 +1,7 @@
-import {StateSchema} from "@/app/providers/StoreProvider";
-import {getProfileData} from "./getProfileData";
-import {Country} from "@/entities/Country";
-import {Currency} from "@/entities/Currency";
+import { StateSchema } from "@/app/providers/StoreProvider";
+import { getProfileData } from "./getProfileData";
+import { Country } from "@/entities/Country";
+import { Currency } from "@/entities/Currency";
 
 describe("getProfileData.test", () => {
     test("should work with filled state", () => {
@@ -17,8 +17,8 @@ describe("getProfileData.test", () => {
 
         const state: DeepPartial<StateSchema> = {
             profile: {
-                data: data
-            }
+                data: data,
+            },
         };
 
         expect(getProfileData(state as StateSchema)).toEqual(data);

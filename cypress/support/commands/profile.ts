@@ -13,18 +13,18 @@ export const resetProfile = (profileId: string) => {
         method: "PUT",
         url: `http://localhost:8000/profile/${profileId}`,
         headers: {
-            Authorization: "authHeader"
+            Authorization: "authHeader",
         },
         body: {
-            "id": "4",
-            "first": "TestFirstName",
-            "lastname": "TestLastName",
-            "age": 44,
-            "currency": "RUB",
-            "country": "Russia",
-            "city": "Moscow",
-            "username": "testuser",
-            "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
+            id: "4",
+            first: "TestFirstName",
+            lastname: "TestLastName",
+            age: 44,
+            currency: "RUB",
+            country: "Russia",
+            city: "Moscow",
+            username: "testuser",
+            avatar: "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg",
         },
     });
 };
@@ -32,8 +32,11 @@ export const resetProfile = (profileId: string) => {
 declare global {
     namespace Cypress {
         interface Chainable {
-            updateProfile(newFirstName: string, newLastName: string): Chainable<void>,
-            resetProfile(profileId: string): Chainable<void>,
+            updateProfile(
+                newFirstName: string,
+                newLastName: string,
+            ): Chainable<void>;
+            resetProfile(profileId: string): Chainable<void>;
         }
     }
 }

@@ -1,12 +1,12 @@
-import {StateSchema} from "@/app/providers/StoreProvider";
-import {getProfileError} from "./getProfileError";
+import { StateSchema } from "@/app/providers/StoreProvider";
+import { getProfileError } from "./getProfileError";
 
 describe("getProfileError.test", () => {
     test("should work with filled state", () => {
         const state: DeepPartial<StateSchema> = {
             profile: {
-                error: "123"
-            }
+                error: "123",
+            },
         };
 
         expect(getProfileError(state as StateSchema)).toEqual("123");

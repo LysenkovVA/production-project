@@ -1,6 +1,6 @@
-import {createSlice, PayloadAction} from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { loginByUsername } from "../services/loginByUsername/loginByUsername";
-import {LoginSchema} from "../types/loginSchema";
+import { LoginSchema } from "../types/loginSchema";
 
 const initialState: LoginSchema = {
     isLoading: false,
@@ -17,7 +17,7 @@ export const loginSlice = createSlice({
         },
         setPassword: (state, action: PayloadAction<string>) => {
             state.password = action.payload;
-        }
+        },
     },
     // Нужно для изменения стейта
     extraReducers: (builder) => {

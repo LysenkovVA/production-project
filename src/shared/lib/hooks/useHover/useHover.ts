@@ -1,4 +1,4 @@
-import {useCallback, useState} from "react";
+import { useCallback, useState } from "react";
 
 interface UseHoverBind {
     onMouseEnter: () => void;
@@ -32,7 +32,7 @@ export const useHover = () => {
         {
             onMouseEnter,
             onMouseLeave,
-        }
+        },
     ];
 
     return hoverResult;
