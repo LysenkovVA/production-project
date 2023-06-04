@@ -7,6 +7,7 @@ interface ToggleFeaturesOptions<T> {
     off: () => T;
 }
 
+// Будем использовать для какого-то функционала
 export function toggleFeatures<T>({
     name,
     on,
