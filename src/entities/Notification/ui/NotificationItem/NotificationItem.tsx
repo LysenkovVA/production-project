@@ -1,9 +1,9 @@
-import {classNames} from "@/shared/lib/classNames/classNames";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import cls from "./NotificationItem.module.scss";
-import {memo} from "react";
-import {Notification} from "../../model/types/notifications";
-import {Card, CardTheme} from "@/shared/ui/Card";
-import {Text} from "@/shared/ui/Text";
+import { memo } from "react";
+import { Notification } from "../../model/types/notifications";
+import { Card, CardTheme } from "@/shared/ui/deprecated/Card";
+import { Text } from "@/shared/ui/deprecated/Text";
 
 interface NotificationItemProps {
     className?: string;
@@ -11,14 +11,14 @@ interface NotificationItemProps {
 }
 
 export const NotificationItem = memo((props: NotificationItemProps) => {
-    const {className, item} = props;
+    const { className, item } = props;
 
     const content = (
         <Card
             theme={CardTheme.OUTLINED}
             className={classNames(cls.NotificationItem, {}, [className])}
         >
-            <Text title={item.title} text={item.description}/>
+            <Text title={item.title} text={item.description} />
         </Card>
     );
 

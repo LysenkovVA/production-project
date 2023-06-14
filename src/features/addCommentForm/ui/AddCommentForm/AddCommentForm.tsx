@@ -1,15 +1,21 @@
-import {classNames} from "@/shared/lib/classNames/classNames";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import cls from "./AddCommentForm.module.scss";
-import {useTranslation} from "react-i18next";
-import {memo, useCallback} from "react";
-import {Input} from "@/shared/ui/Input";
-import {Button, ButtonTheme} from "@/shared/ui/Button";
-import {useSelector} from "react-redux";
-import {getAddCommentFormText} from "../../model/selectors/addCommentFormSelectors";
-import {useAppDispatch} from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
-import {addCommentFormActions, addCommentFormReducer} from "../../model/slice/addCommentFormSlice";
-import {DynamicModuleLoader, ReducersList} from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
-import {HStack} from "@/shared/ui/Stack";
+import { useTranslation } from "react-i18next";
+import { memo, useCallback } from "react";
+import { Input } from "@/shared/ui/deprecated/Input";
+import { Button, ButtonTheme } from "@/shared/ui/deprecated/Button";
+import { useSelector } from "react-redux";
+import { getAddCommentFormText } from "../../model/selectors/addCommentFormSelectors";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
+import {
+    addCommentFormActions,
+    addCommentFormReducer,
+} from "../../model/slice/addCommentFormSlice";
+import {
+    DynamicModuleLoader,
+    ReducersList,
+} from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+import { HStack } from "@/shared/ui/deprecated/Stack";
 
 export interface AddCommentFormProps {
     className?: string;
@@ -21,15 +27,18 @@ const reducers: ReducersList = {
 };
 
 const AddCommentForm = (props: AddCommentFormProps) => {
-    const {className, onSendComment} = props;
-    const {t} = useTranslation();
+    const { className, onSendComment } = props;
+    const { t } = useTranslation();
     const text = useSelector(getAddCommentFormText);
     //const error = useSelector(getAddCommentFormError);
     const dispatch = useAppDispatch();
 
-    const onCommentTextChange = useCallback((value: string) => {
-        dispatch(addCommentFormActions.setText(value));
-    }, [dispatch]);
+    const onCommentTextChange = useCallback(
+        (value: string) => {
+            dispatch(addCommentFormActions.setText(value));
+        },
+        [dispatch],
+    );
 
     const onSendHandler = useCallback(() => {
         onSendComment(text || "");
